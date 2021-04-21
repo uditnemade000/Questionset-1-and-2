@@ -1,0 +1,495 @@
+1.what is the Difference between C++ and java ? 
+
+ANS = 
+
+	C++								JAVA
+
+*)C++ is a plateform dependent language				*)java is plateform independent language
+
+*)C++ is use for system programming language			*)java is application programming language
+
+*)C++ support pointer.we can write pointer 			*)java internaly use pointer.We can't write pointer programme 
+  programme in C++						  in java.
+
+*)C++ support multiple inheritance				*)java does not support multiple inheritance through class.It can achieved
+								  by using interface in java.
+
+*) C== support call by value and call by reference		*)java support only call by value, there is no call by reference in java.
+
+
+2.What are the key features of java?
+
+ANS = 
+features of java
+
+1)Simple = java is easy to learn,its syntax is simple and easy to understand,thaswhy java is a simple programming language.
+
+2)Object Oriented = Everything in java is a object.With the help of object we perform multiple operations thatswhy java is called
+			as object oriented programming language.
+
+3)Secured = java is secured laguage bcz there is no explicite pointer concept and java programme run inside jvm.
+
+4)Plateform independent = In java compiler convert .java file into .class file which is call as bytecode and this 
+			  bytecode can run on any operation system ehere jvm is install.So java is write once run anywhere language.
+
+5)Robust = Robust means strong.Java is a strong language bacuase,
+		*)It use strong mamory management
+		*)There is no explicit pointer concet so its secured.
+		*)There is automatic garbadge collection concept so it manage memory automatically.
+		*)There is exception handling and type checking machanism.	
+			All these points make java Robust.
+
+
+
+3.What is JVM ?
+
+ANS = 
+	JVM - is a java vertual machine which means its not any physical existance.
+	Jvm-provide run time environment in which java bytecode execute.
+	Jvm is plateform dependent. it is different for different operating system.
+	Jvm convert bytecode into the executable instructions.
+
+
+
+4.what is oops?why it called as object oriented?
+
+ANS = 
+	The programm where everything is represented as object is called as object oriented programming language.
+	object is the real world entity like pen pencil table etc and the object oriented programming is the methodology to design a programm using class and object.
+	It simplify software development by providing some concept
+	*)class
+	*)object 
+	*)Abstraction
+	*)Encapsulation
+	*)Inheritance
+	*)Polymorp
+
+5.what is Multiple inheritance?Explain with real time and in a programmic way?
+
+ANS = 
+
+There occurs a problem in multiple inheritance in java as the base class has a method which is when derived or overriden in the child class
+with same name and same signature in both parent classes  and child class. On calling the method, the compiler cannot determine which class method is to be
+called so Java doesnt support multiple inheritance directly
+
+example: 
+
+
+
+
+Programatic example
+
+class A{
+void data()
+{
+	System.out.println("Hi data");
+}
+}
+class B{
+void data()
+{
+	System.out.println("Hello data");
+}
+}
+
+class C extends A,B{
+public static void main (String[] args)
+{
+	C obj = new C();
+	obj.data();
+}
+}
+
+
+
+6.Difference between abstract class and interface?
+
+ANS=
+Abstract Class: 
+-> can have abstract and non abstract methods
+-> does not support mutliple inheritance 
+-> Variables can be static, non-static, and final not final in an abstract class.
+-> Abstract class can extend other class and also implement interface
+-> Uses extends keyword for extending 
+-> members can be private and protected
+-> Can extend one class at a time
+
+
+Interface:
+-> can have only abstract methods
+-> supports multiple inheritance
+-> Variables are static and final in an Interface
+-> Interface extend other Interface only 
+-> Uses implements keyword for implementation1.
+-> members are public by default
+-> can extend one or more interface at a time 
+
+
+
+7.What is Encapsulation?Explain with real time example?
+
+ANS = 
+
+It is the process of binding and wrapping of data members and member functions together into an entity. The variables of a class will be hidden from
+other classes and will be accessed by methods 	of the current class in which it resides.
+
+Example of Encapsulation is:
+Washing machine is an example which has power button  and performs the task of washing the clothes we dont know the inner implementation of how power button works
+but our work is done 
+
+
+8.what is Polymorphism? and inheritnce?
+
+ANS = 
+
+ Polymorphism is a object oriented concept in which poly means many and morph means form So polymorphism is the onne thing having many forms.
+There are two types of polymorphism Static Binding And Dynamic Binding .
+Static Binding means Compile Time Polymorphism which has function overloading , constructor overloading etc
+Dynamic Binding means Runtime Polymorphism which has function overrding
+
+Inheritance is the mechanism in which one class can exhibit or inherit the properties of another class.
+Parent Child Relationship is maintained in inheritance
+
+There are 4 types of inheritance:
+1. Single
+2. Multilevel
+3. Hierarchical
+4. Multiple
+
+Inheritance helps in code reusability and also code written in base class need not to be written again in derived class we can directly call
+base class code.
+
+
+
+9.What is Method Overriding and Method Overloading ?xplain with program?
+
+ANS = 
+ Method Overriding is the definition of method with same name and same signature which is there in the base class same to be implemented in the derived class.
+Method overriding is used for runtime polymorphism. 
+
+Method Overriding works in two classes i.e base class and derived class
+
+Method Overloading is the same method with same name but different parameters i.e same method can be called with different number of arguments.
+
+Method Overloading uses compile time polymorphism.
+
+Method Overloading works in the same class.
+
+
+Example:
+
+class A{
+void demo()
+{
+	System.out.print("Hello Demo");
+}
+}
+class B extends A{
+void demo()
+{
+	System.out.print("Hi Demo");
+}
+
+public static void main(String [] args)
+{
+	B b = new B();
+	b.demo();
+}
+}
+
+
+
+class A{
+	void demo()
+	{
+		System.out.print("Hello Demo");
+	}
+	void demo(String name)
+	{
+		System.out.println("Hello"+ name);
+	}
+
+	public static void main(String [] args)
+	{
+		A a = new A();
+		a.demo();
+		a.demo(Viraj);
+	}
+}
+
+
+
+10.what is collection?what's its need? if we are having array?
+
+ANS = 
+Collection is a framework that provide and architecture for storing and manipulating a group of objects
+Collection acheives operations like searching, sorting, insertion, deletion and manipulation.
+It is a single unit of objects. 
+
+The different Interfaces provided by Collection Framework are
+List, Set ,Queue,Deque and Classes are ArrayList, LinkedList, Vector, HashSet, LinkedHashSet, TreeSet, Priority Queue etc.
+
+Collecton reduces programming effort by providing useful data structures for easy manipulation access and storage of elements.
+
+Array is a fixed size homogenous set of elements. Its size once fixed cannot be changed. 
+Also it is used only when our frequent operation to be performed is searching or accessing an element due to its random access nature
+If any insertion or deletion is to be performed on array it becomes a difficult and time complex task. So to overcome that collections come in picture.
+
+11.diffrence between array and arraylist? any programmetical difference?
+
+ANS = 
+ArrayList:
+-> Class of Collection framework
+-> dyanmic in size
+-> variable length data are stored 
+-> we can store only object type data  
+-> single dimensional
+-> iterator is used to iterate over an arrayList
+
+Array:or)
+-> dynamically created object
+-> static in size
+-> fixed length data are stored
+-> we can store primitive as well as object data types data 
+-> multi dimensional
+-> for loop and for each loop is used to iterate over an array
+
+Example:
+
+import java.util.Scanner;
+class ArrayDemo
+{
+	public static void main(String[] args)
+	{
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter the size of array:");
+		int n = sc.nextInt();
+		int arr[] = new int[n];
+		
+		 for(int i=0;i<arr.length();i++)
+		{
+			arr[i]=sc.nextInt();
+		}
+		
+		System.out.println("Array Elements:")
+
+		for(int j=0;j<arr.length();j++)
+		{
+			System.out.print(arr[j]);
+		}
+	}
+}
+
+
+
+import java.util.ArrayList;
+
+
+public class ArrayListDemo {
+
+	public static void main(String[] args) {
+		ArrayList<String> list = new ArrayList<String>();
+		list.add("Viraj");
+		list.add("Vaibhav");
+		list.add("Ashwini");
+		list.add("Ekta");
+		list.add("Shrusti");
+		list.add("Unnati");
+		list.add("Saurabh");
+		
+		System.out.println("ArrayList Elements are:");
+		for(String s: list)
+		{
+			System.out.println(s);
+		}
+		
+
+	}
+
+}
+
+
+12.Difference between list and arraylist?
+
+ANS = 
+
+List: rogram 
+-> It is an interface
+-> Object cannot be created
+-> extends Collection Framework
+-> fast
+-> It creates List of objects 
+
+
+
+ArrayList:
+-> It is a class
+-> Object can be created
+-> Extends AbstractList Class and implements List Interface
+-> slow compared to list
+-> it creates dynamic array 
+
+
+
+13.Explain Exception handling and how it is handled?
+
+ANS = 
+
+Exception is an unwanted event that occurs in a program which stops a program's execution.
+Exception handling is the mechanism to handle the exception occured due to unwanted action and 
+execute the program efficiently.
+
+Exception can  be handled using five keywords:
+
+1) try: Enclosed in the block where exception will occurr
+2) catch: The exception is caught in this block
+3) finally: It will execute whether or not execption occurs
+4) throw: Explicitly throw an exception
+5) throws: Used in method where it is sure that exception will occur
+
+
+14.What is garbage collection?
+
+ANS = 
+
+ Garbage Collection is the method in JAVA whenever any object which is no longer being used in a program it is destroyed and memory is freed by JVM
+So JVM gives better memory management 
+It makes JAVA memory efficient as it removes the unwanted memory and also the unreferenced objects from the heap.
+
+15. public static void main():
+
+public: It is an access specifier which indicates that the method is public and is accessed in every class or method.
+
+static: Static means we can directly class this method with class name no instance is required to be created for it
+
+void: It indicates the return type of the method which is null i.e. nothing.
+
+main: It is the name of the method which the JVM will search when the program is compiled for execution
+
+
+
+16.write a program to concat two arraylist if we are having first arraylist of 5 students firstname and then second arraylist of having five student lastname.then how we can concat first student firstname and lastname and others also.
+
+ANS = 
+
+import java.util.ArrayList;
+
+public class ConcatArrayList {
+
+	public static void main(String[] args) {
+
+		ArrayList<String> fname = new ArrayList<String>();
+		ArrayList<String> lname = new ArrayList<String>();
+		fname.add("Viraj");
+		fname.add("Vaibhav");
+		fname.add("Ashwini");
+		fname.add("Ekta");
+		fname.add("Unnati");
+		fname.add("Shrusti");
+		lname.add("Kansara");
+		lname.add("Rokde");
+		lname.add("Lahire");
+		lname.add("Walavalkar");
+		lname.add("Tappe");
+		lname.add("Patel");
+		System.out.println("FirstNames:"+fname);
+		System.out.println("LastNames:"+lname);
+		int len = fname.size();
+		ArrayList<String> fullName = new ArrayList<String>();
+		for(int i=0;i<len;i++)
+		{
+			fullName.add(fname.get(i) + " "+ lname.get(i));
+		}
+		System.out.println("FullNames:"+fullName);
+		
+	}
+
+}
+
+17.Write a program to reverse a String contents.
+
+ANS = 
+
+import java.util.Scanner;
+
+public class ReverseString {
+
+	public static void main(String[] args) {
+		
+		Scanner sc = new Scanner(System.in);
+		String str = sc.nextLine();
+		char[] ch = str.toCharArray();
+		for(int i=ch.length-1;i>=0;i--)
+		{
+			System.err.print(ch[i]);
+		}
+
+	}
+
+}
+
+
+18.write a program to check anagram of string.
+ANS = 
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class Anagram {
+
+	public static void main(String[] args) {
+		
+		Scanner sc = new Scanner(System.in);
+		String str= sc.nextLine();
+		int len1 =str.length();
+		String str2 = sc.nextLine();
+		int len2 = str2.length();
+		if(len1!=len2)
+		System.out.println("Strings are not anagram");
+		else
+		{
+			char[] arr1 = str.toLowerCase().toCharArray();
+			char[] arr2 = str2.toLowerCase().toCharArray();
+			Arrays.sort(arr1);
+			Arrays.sort(arr2);
+			if(Arrays.equals(arr1, arr2))
+			{
+				System.out.println("String are anagrams");
+			}
+			else
+			{
+				System.out.println("Strings are not anagram");
+			}
+		}
+	}
+
+}
+
+19.Do you Know any versioning tool?explain it?
+
+ANS = 
+GIT is a versoining tool used by many IT developers in today's era.
+
+Git is a free and open source distributed version control tool designed to work on small or large projects and save large data on it and also work on same project
+in team by maintaining version of the project
+
+It is used by developers for merging and branching codes developed by different developers on same project
+
+Another developer can clone i.e. copy the whole project and use it in his system
+
+We can push our code and commit the changes made in the project and other user can apply changes at their side by pulling the code by git pull
+
+
+20.what is RestApi?Have you used it in your project? and explain how you used it?
+
+ANS = 
+ Rest Api means an Representational State Transfer (Rest) API i.e. Application Programming Interface that is developed by developers that maintains a contract between the developer and user 
+that the user can use the methods developed by the developer on any platform. Rest API means the API is platform independent and can work on any platform whether
+windows, linux or mobile OS.
+Rest is not fixed to one type of call or method. It can handle multiple types of calls return different data formats and even change structurally
+
+One of the requirements to be a REST API is the utilization of HTTP methods to make  a request over a network.
+
+Yes Rest API was used in my project as we developed different Get Post Put calls which were made from React Js side and which gete the localhost server data and store 
+it in database. Also both port number being different using rest controller and rest API calls communication between Spring Boot and React Js was established on Cross 
+Origin platform
+

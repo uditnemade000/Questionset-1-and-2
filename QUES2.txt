@@ -1,0 +1,247 @@
+Que.1 Which is ultimate base class in java class hierarchy? List the name of methods of it?
+
+-->
+i)Object Class is ultimate base class for java class.
+ii)It has 9 methods :- 
+    public String toString(), 
+	public boolean equals(),
+	public native int hashcode(),
+	protected native Object clone() throws CloneNotSupportedException,
+	protected void finalize() throws Throwable,
+	public final Class getClass(),
+	public final void wait() throws InterruptedException,
+	public final native void wait(long ms) throws InterruptedException,
+	public final void wait(long ms, int ns) throws InterruptedException,
+	public native final void notify(),
+	public native final void notifyAll()
+
+Que. 2  Explain narrowing and widening?
+-->
+Widening, also known as upcasting, is a conversion that implictly takes place in the following situations -
+Widening takes place when a smaller primitive type value is automatically accommodated in a larger/wider primitive data type.
+Widening also takes place when a reference variable of a subclass is automatically accommodated in a reference variable of its superclass.
+
+Narrowing, also known as downcasting/casting, is a conversion that is explictly performed in the following situations -
+Narrowing a wider/bigger primitive type value to a smaller primitive type value.
+Narrowing a superclass reference to a subclass reference, during inheritance.
+
+Que. 3 Explain the difference among final, finally and finalize?
+
+-->
+1.final :
+	i)Final is a modifier applicable for classes , methods and variables.
+	ii)If a class declared as a final we can’t extend that class i.e. we can’t create child class for that class
+	i.e. inheritance is not  possible for final classes.
+	iii)If a method is final then we can’t override that method in child class
+	iv)If a variable declared as final , we can’t perform reassignment for that variable.
+
+2.finally
+	i)finally is a block always associated with try-catch to maintain cleanup code. 
+	ii)The speciality of finally block is it will be executed always irrespective whether exception is raised  or whether handled or not handled.
+    iii)e.g
+		try{
+			Risky code
+		}catch(Exception e){
+			Handling code
+			}
+		finally{
+			Cleanup code
+			}
+
+3.finalize()
+	i)Finalize is a method always invoked by GC just before destroying an object to perform claenup activities.
+	ii)Once finalize() completes immedaitely Gc destroys that object.
+
+Que. 4 Explain the difference among checked and unchecked exception?
+-->
+ Checked exceptions are the exceptions that are checked at compile time. If some code within a method throws a checked exception, then the method must either handle the exception or it must specify the exception using throws keyword.
+e.g sqlexception,filenotfoundexception
+
+Unchecked are the exceptions that are not checked at compiled time. In C++, all exceptions are unchecked, so it is not forced by the compiler to either handle or specify the exception. 
+e.g runtimeexception,arrayindexoutofbound
+
+Que.5 What do you know about final method?
+-->
+- we cammot override final method.
+
+Que. 6 Why java does not support multiple implementation inheritance?
+-->
+The reason behind this is to prevent ambiguity.
+
+Consider a case where class B extends class A and Class C and both class A and C have the same method display().
+
+Now java compiler cannot decide, which display method it should inherit. To prevent such situation, multiple inheritances is not allowed in java.
+
+Que.7 Explain marker interface? List the name of some marker interfaces?
+	Explain the significance of marker interface?
+-->
+An interface that does not contain methods, fields, and constants is known as marker interface. In other words, an empty interface is known as marker interface or tag interface. It delivers the run-time type information about an object. It is the reason that the JVM and compiler have additional information about an object. The Serializable and Cloneable interfaces are the example of marker interface. In short, it indicates a signal or command to the JVM.
+
+Que.8 Explain the difference among Array and ArrayList?
+-->
+Array is a fixed length data structure whereas ArrayList is a variable length Collection class. We cannot change length of array once created in Java but ArrayList can be changed.
+
+We cannot store primitives in ArrayList, it can only store objects. But array can contain both primitives and objects in Java. Since Java 5, primitives are automatically converted in objects which is known as auto-boxing.
+
+Que. 9 Explain the difference among Hash Table and Hash Map?
+-->
+Hashmap :
+-not synchronized
+-one null key and multiple null vales
+-iterate through iterator
+-Hashmap is fast
+
+Hashtable:
+-synchronized
+-null not allowed
+-iterate through iterator and Enumeration
+- slow
+
+que. 10 Explain the difference among HashSet and Hash Map?	
+-->
+Hashset:
+-stores set of object
+-single null value
+-implemte set interface
+
+
+Hashmap:
+-store key value pair
+-single null key but diffrent null value
+-implemnt map interface
+
+//Advance java
+Que. What is the difference between execute, executeQuery, executeUpdate?
+-->
+excecute(): it is used with DDL operation and it returns boolean to check query excuted or not. e.g create table
+
+executeQuery(): it is used to excecute select sttaemt and return data in tabular format. means it is returning an object of resultset
+
+exceuteUpdate(): this method is used to execute insert ,update ,delete oprtaion and returns the inter indicate how many rows are affected.
+
+
+Que. How does Cookies work in Servlets?
+-->
+cookies are small piece of information that is persisted between the multiple client request.
+it contains,name,attribute,version number etc.
+
+flow of cookies:
+every request consider as a new request.
+cookies are send along with responce from servlet.
+those cookies are store in browser cache(local machine). then when aftr new request come this cookies are sennd along with request to the server .hence in this way cookies helps to identify user.
+
+Que. what are the advantages of hibernate over JDBC
+-->
+1.light weigth and opensource
+2.high performance - supports cache system
+3.support database independant query 
+- like HQL queries which are infdepent from database. we dont need to write database specific query.
+- before hiberanet, if project database getting changes then the we need to modify queries as well which waas create maintance prbm.
+4.automatic table creation
+
+Que. What are the differences between a primary key and a foreign key?
+--> 
+-primary key: means null not allowed and supports only unique row. also we can have only one primary key in a table.
+
+- foreign key: means key which is used to refer other table. it can be primary key of other table or primary key of own table. we can have multiple foreign keys.
+
+Que.Explain Joins ?
+-->joins are basically used to join two or more tables.
+types of join 
+1.inner join: join two tables with match data
+2.left outer join: returns all data from left table and matching from both table
+3.right outer join: returns all data from right table and matching from both table
+4.full join:returns all data from both table
+5.cartition join: returns cartian prodect of rows.
+
+
+
+Que. Explain lifecycle of servlet?
+-->
+Initialization:
+- whenever 1st request come from client then servlet class loaded into webcontainer and create its object.
+-once object created init() method gets call.
+-the servletConfig parameter will provide all servlet configuration infrormation from .xml file.
+
+Destroy:
+When servlet object is no longer used then it calls destroy method before destroying servlet object. then object is ready for garbage collection
+
+Service:
+-for each request web container call service method
+-after method execution then the responce send back to the client
+-servletResponce and servletRequest object gets created before calling service method.
+
+Que. What are different types of JDBC Drivers?
+-->
+-JDBC driver is a software component that that enables java application to interact with database.
+4 types of JDBC driver
+
+1.JDBC-ODBC bridge driver
+2.Native-API driver
+3.Network protocol driver
+4.Thin driver
+
+1.JDBC-ODBC bridge driver:
+- it used ODBC driver to connect to the database
+- JDBC method call gets converted to ODBC function call.
+- not supported by oravle since java 8
+- it recommended to use driver provided by vendor of your database.
+
+2.Native-API driver:
+-it uses client side libraries of database.
+-The driver converts JDBC method calls into native calls of the database API. It is not written entirely in java.
+
+3.Network protocol driver:
+-The Network Protocol driver uses middleware (application server) that converts JDBC calls directly or indirectly into the vendor-specific database protocol. It is fully written in java.
+
+4.Thin driver
+The thin driver converts JDBC calls directly into the vendor-specific database protocol. That is why it is known as thin driver. It is fully written in Java language.
+
+Que. What is the difference between GET and POST method?
+-->
+Get:
+-data diplyed in url
+-not secure
+-binary transfer not support
+-get request can be bookmarked
+
+Post:
+-data transfer through body
+-secure
+-support binary transfer
+-request cannot bookmarked
+
+Que. explain what we mean by an ACID transaction
+-->
+A transaction is a single logical unit of work which accesses and possibly modifies the contents of a database. Transactions access data using read and write operations. 
+In order to maintain consistency in a database, before and after the transaction, certain properties are followed. These are called ACID properties.
+
+Automicity:
+By this, we mean that either the entire transaction takes place at once or doesn’t happen at all. There is no midway i.e. transactions do not occur partially. Each transaction is considered as one unit and either runs to completion or is not executed at all. It involves the following two operations. 
+—Abort: If a transaction aborts, changes made to database are not visible. 
+—Commit: If a transaction commits, changes made are visible. 
+Atomicity is also known as the ‘All or nothing rule’. 
+
+Consistency :
+This means that integrity constraints must be maintained so that the database is consistent before and after the transaction. It refers to the correctness of a database. Referring to the example above, 
+The total amount before and after the transaction must be maintained. 
+Total before T occurs = 500 + 200 = 700. 
+Total after T occurs = 400 + 300 = 700. 
+Therefore, database is consistent. Inconsistency occurs in case T1 completes but T2 fails. As a result T is incomplete. 
+
+Isolation 
+This property ensures that multiple transactions can occur concurrently without leading to the inconsistency of database state. Transactions occur independently without interference. Changes occurring in a particular transaction will not be visible to any other transaction until that particular change in that transaction is written to memory or has been committed. This property ensures that the execution of transactions concurrently will result in a state that is equivalent to a state achieved these were executed serially in some order. 
+Let X= 500, Y = 500. 
+Consider two transactions T and T”.
+
+Durability: 
+This property ensures that once the transaction has completed execution, the updates and modifications to the database are stored in and written to disk and they persist even if a system failure occurs. These updates now become permanent and are stored in non-volatile memory. The effects of the transaction, thus, are never lost.
+
+Que.  What are the different types of keys in the database?
+-->
+1.primary key
+2.foreign key
+3.unique key
+4.composite key
+5.candidate key
+
